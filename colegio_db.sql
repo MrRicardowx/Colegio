@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-06-2016 a las 08:15:59
+-- Tiempo de generación: 10-06-2016 a las 05:55:45
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -153,16 +153,16 @@ INSERT INTO `curso` (`id_Curso`, `Nivel`, `Letra`, `CantAlumnos`, `RUT_Profesor`
 
 CREATE TABLE IF NOT EXISTS `notas` (
   `id_Notas` int(11) NOT NULL AUTO_INCREMENT,
-  `N1` int(11) DEFAULT NULL,
-  `N2` int(11) DEFAULT NULL,
-  `N3` int(11) DEFAULT NULL,
-  `N4` int(11) DEFAULT NULL,
-  `N5` int(11) DEFAULT NULL,
-  `N6` int(11) DEFAULT NULL,
-  `N7` int(11) DEFAULT NULL,
-  `N8` int(11) DEFAULT NULL,
-  `N9` int(11) DEFAULT NULL,
-  `N10` int(11) DEFAULT NULL,
+  `N1` float DEFAULT NULL,
+  `N2` float DEFAULT NULL,
+  `N3` float DEFAULT NULL,
+  `N4` float DEFAULT NULL,
+  `N5` float DEFAULT NULL,
+  `N6` float DEFAULT NULL,
+  `N7` float DEFAULT NULL,
+  `N8` float DEFAULT NULL,
+  `N9` float DEFAULT NULL,
+  `N10` float DEFAULT NULL,
   `RUT_Alumno` varchar(20) NOT NULL,
   `id_Asignatura` int(11) NOT NULL,
   PRIMARY KEY (`id_Notas`),
@@ -175,8 +175,8 @@ CREATE TABLE IF NOT EXISTS `notas` (
 --
 
 INSERT INTO `notas` (`id_Notas`, `N1`, `N2`, `N3`, `N4`, `N5`, `N6`, `N7`, `N8`, `N9`, `N10`, `RUT_Alumno`, `id_Asignatura`) VALUES
-(1, 5, 6, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '18.661.111-7', 2),
-(2, 6, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '18.712.123-4', 1);
+(1, 5.3, 6.1, 1.8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '18.661.111-7', 2),
+(2, 6.2, 3.9, 3.8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '18.712.123-4', 1);
 
 -- --------------------------------------------------------
 
