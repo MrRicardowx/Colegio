@@ -1,0 +1,35 @@
+#### CRUD EN PHP##
+alumno: Create y Delete listos
+
+//////*** ALUMNOS ************///
+        ####CODIGO PARA INSERTAR ALUMNO #####
+         // INSERTAR DATOS DEL ALUMNO
+        $rut = '18.113.004-2'; #xx.xxx.xxx-x
+        $nombre = 'NOMBRE';
+        $apellidoPaterno = 'APELLIDO_PATERNO';
+        $apellidoMaterno = 'APELLIDO_MATERNO';
+        $fecha_nac = '1989-12-22'; #yyyy-dd-mm
+        $dias_p = 0;		#dias presente POR DEFECTO ES 0
+        $dias_a = 0;		#dias ausente POR DEFECTO ES 0
+        $dias_j = 0;		#dias justificados POR DEFECTO ES 0
+        $rut_ap = '14.332.445-2'; # yy.yyy.yyy-y rut de apoderado que debe existir en la BD
+        $id_curso = 0; #CURSO AL QUE PERTENCE, DEBE EXISTIR
+        
+        $insert = "INSERT INTO alumno (RUT_Alumno, Nombre_Alumno,ApellidoP_Alumno,ApellidoM_Alumno,FechaNac_Alumno,Dias_Presente,Dias_Ausente,Dias_Justificados,RUT_Apoderado,id_Curso) values ('$rut', '$nombre' , '$apellidoPaterno', '$apellidoMaterno' , CAST('$fecha_nac' AS DATE) , $dias_p, $dias_a, $dias_j, '$rut_ap' , $id_curso )";
+        if (mysql_query($insert, $conexion)) {
+            echo "Nuevo Alumno Ingresado";
+        } else {
+            echo "Error: " . $insert . "<br>" . mysql_error($conexion);
+        }
+       #####################
+       
+       ####CODIGO PARA ELIMINAR ALUMNO SEGUN RUT#####
+        // INSERTAR RUT DEL ALUMNO A ELIMINAR
+        $rut = 'xx.xxx.xxx-x'; 
+        $delete = "DELETE FROM alumno WHERE RUT_Alumno = '$rut'";
+        if (mysql_query($delete, $conexion)) {
+        		echo "Alumno rut: $rut Eliminado";
+        } else {
+        		echo "Error: " . $delete . "<br>" . mysql_error($conexion);
+        }
+        #####################
