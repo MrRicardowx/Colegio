@@ -33,3 +33,184 @@ alumno: Create y Delete listos
         		echo "Error: " . $delete . "<br>" . mysql_error($conexion);
         }
         #####################
+
+
+//////*** ANOTACIONES ************///
+        ####CODIGO PARA INSERTAR ANOTACIOn #####
+         // INSERTAR DATOS DE LA ANOTACION
+        $id = '1'; #x
+        $tipo = 'TIPO';
+        $descripcion = 'DESCRIPCION';
+        $fecha = '1989-12-22'; #yyyy-dd-mm
+        $rut = '18.113.004-2'; #xx.xxx.xxx-x
+        
+        $insert = "INSERT INTO anotacion (id_Anotacion, Tipo, Descripcion, Fecha, RUT_Alumno) values ('$id', '$tipo' , '$descripcion', CAST('$fecha' AS DATE) , '$rut' )";
+        if (mysql_query($insert, $conexion)) {
+            echo "Nueva Anotacion Ingresada";
+        } else {
+            echo "Error: " . $insert . "<br>" . mysql_error($conexion);
+        }
+       #####################
+       
+       ####CODIGO PARA ELIMINAR ANOTACION SEGUN ID#####
+        // INSERTAR ID DE LA ANOTACION A ELIMINAR
+        $id = 'x'; #no se si esta bien esta wea
+        $delete = "DELETE FROM anotacion WHERE id_Anotacion = '$id'";
+        if (mysql_query($delete, $conexion)) {
+        		echo "Anotacion id: $id Eliminada";
+        } else {
+        		echo "Error: " . $delete . "<br>" . mysql_error($conexion);
+        }
+        #####################
+
+//////*** APODERADO ************///
+        ####CODIGO PARA INSERTAR APODERADO #####
+         // INSERTAR DATOS DEL APODERADO
+        $rut = '18.113.004-2'; #xx.xxx.xxx-x
+        $nombre = 'NOMBRE';
+        $apellidoPaterno = 'APELLIDO_PATERNO';
+        $apellidoMaterno = 'APELLIDO_MATERNO';
+        $fecha_nac = '1989-12-22'; #yyyy-dd-mm
+        $tel = '123456789'
+        $correo = 'correo@correo.cl'
+        
+        $insert = "INSERT INTO apoderado (RUT_Apoderado, Nombre_Apoderado, ApellidoP_Apoderado, ApellidoM_Apoderado, FechaNac_Apoderado, Telefono_Apoderado, Correo_Apoderado) values ('$rut', '$nombre' , '$apellidoPaterno', '$apellidoMaterno' , CAST('$fecha_nac' AS DATE) , '$tel', '$correo')";
+        if (mysql_query($insert, $conexion)) {
+            echo "Nuevo Apoderado Ingresado";
+        } else {
+            echo "Error: " . $insert . "<br>" . mysql_error($conexion);
+        }
+       #####################
+       
+       ####CODIGO PARA ELIMINAR APODERADO SEGUN RUT#####
+        // INSERTAR RUT DEL APODERADO A ELIMINAR
+        $rut = 'xx.xxx.xxx-x'; 
+        $delete = "DELETE FROM apoderado WHERE RUT_Apoderado = '$rut'";
+        if (mysql_query($delete, $conexion)) {
+        		echo "Apoderado rut: $rut Eliminado";
+        } else {
+        		echo "Error: " . $delete . "<br>" . mysql_error($conexion);
+        }
+        #####################
+
+
+//////*** ASIGNATURA ************///
+        ####CODIGO PARA INSERTAR ASIGNATURA #####
+         // INSERTAR DATOS DEL ASIGNATURA
+        $id = '1'; #x
+        $nombre = 'NOMBRE';
+        $rut_prof = '14.332.445-2'; # yy.yyy.yyy-y rut de apoderado que debe existir en la BD
+        
+        $insert = "INSERT INTO asignatura (id_Asignatura, Nombre_Asignatura, RUT_Profesor) values ('$id', '$nombre' , '$rut_prof')";
+        if (mysql_query($insert, $conexion)) {
+            echo "Nuevo Alumno Ingresado";
+        } else {
+            echo "Error: " . $insert . "<br>" . mysql_error($conexion);
+        }
+       #####################
+       
+       ####CODIGO PARA ELIMINAR ASIGNATURA SEGUN ID#####
+        // INSERTAR RUT DEL ASIGNATURA A ELIMINAR
+        $id = 'x'; 
+        $delete = "DELETE FROM asignatura WHERE id_Asignatura = '$id'";
+        if (mysql_query($delete, $conexion)) {
+        		echo "Asignatura id: $id Eliminado";
+        } else {
+        		echo "Error: " . $delete . "<br>" . mysql_error($conexion);
+        }
+        #####################
+
+
+//////*** CURSOS ************///
+        ####CODIGO PARA INSERTAR CURSO #####
+         // INSERTAR DATOS DEL CURSO
+        $id = '1'; #x
+        $nivel = 'NIVEL';
+        $letra = 'LETRA';
+        $cant_alum = 'CANT_ALUM';
+        $rut_prof = '14.332.445-2'; # yy.yyy.yyy-y rut de apoderado que debe existir en la BD
+
+        $insert = "INSERT INTO curso (id_Curso, Nivel, Letra, CantAlumnos, RUT_Profesor)" values ('$id', '$nivel' , '$letra', '$cant_alum', $rut_prof')";
+        if (mysql_query($insert, $conexion)) {
+            echo "Nuevo Curso Ingresado";
+        } else {
+            echo "Error: " . $insert . "<br>" . mysql_error($conexion);
+        }
+       #####################
+       
+       ####CODIGO PARA ELIMINAR CURSO SEGUN ID#####
+        // INSERTAR ID DE CURSO A ELIMINAR
+        $rut = 'x'; 
+        $delete = "DELETE FROM curso WHERE id_Curso = '$id'";
+        if (mysql_query($delete, $conexion)) {
+        		echo "Curso id: $id Eliminado";
+        } else {
+        		echo "Error: " . $delete . "<br>" . mysql_error($conexion);
+        }
+        #####################
+
+//////*** NOTAS ************///
+        ####CODIGO PARA INSERTAR NOTA #####
+         // INSERTAR DATOS DE LA NOTA
+        $n1 = N1;
+        $n2 = N2;
+        $n3 = N3;
+        $n4 = N4;
+        $n5 = N5;
+        $n6 = N6;
+        $n7 = N7;
+        $n8 = N8;
+        $n9 = N9;
+        $n10 = N10;
+        $rut_alum = '18.113.004-2'; #xx.xxx.xxx-x
+        $id_asig = '1' #x 
+
+        $insert = "INSERT INTO notas (N1, N2, N3, N4, N5, N6, N7, N8, N9, N10, RUT_Alumno, id_Asignatura) values ($n1 ,$n2 ,$n3 ,$n4 ,$n5 ,$n6 ,$n7 ,$n8 ,$n9 ,$n10, '$rut_alum', '$id_asig' )";
+        if (mysql_query($insert, $conexion)) {
+            echo "Nueva nota Ingresada";
+        } else {
+            echo "Error: " . $insert . "<br>" . mysql_error($conexion);
+        }
+       #####################
+       
+       ####CODIGO PARA ELIMINAR NOTA SEGUN ID#####
+        // INSERTAR ID DE LA NOTA A ELIMINAR
+        $id = 1; 
+        $delete = "DELETE FROM notas WHERE id_Notas = $id";
+        if (mysql_query($delete, $conexion)) {
+        		echo "Nota id: $id Eliminada";
+        } else {
+        		echo "Error: " . $delete . "<br>" . mysql_error($conexion);
+        }
+        #####################
+
+
+//////*** PROFESOR ************///
+        ####CODIGO PARA INSERTAR PROFESOR #####
+         // INSERTAR DATOS DEL PROFESOR
+        $rut = '18.113.004-2'; #xx.xxx.xxx-x
+        $nombre = 'NOMBRE';
+        $apellidoPaterno = 'APELLIDO_PATERNO';
+        $apellidoMaterno = 'APELLIDO_MATERNO';
+        $fecha_nac = '1989-12-22'; #yyyy-dd-mm
+        $tel = 123456789
+        $correo = 'correo@correo.cl'
+
+        $insert = "INSERT INTO profesor (RUT_Profesor, Nombre_Profesor,ApellidoP_Profesor,ApellidoM_Profesor,FechaNac_Profesor, Telefono_Profesor, Correo_Profesor) values ('$rut', '$nombre' , '$apellidoPaterno', '$apellidoMaterno' , CAST('$fecha_nac' AS DATE) ,$tel, '$correo')";
+        if (mysql_query($insert, $conexion)) {
+            echo "Nuevo Profesor Ingresado";
+        } else {
+            echo "Error: " . $insert . "<br>" . mysql_error($conexion);
+        }
+       #####################
+       
+       ####CODIGO PARA ELIMINAR PROFESOR SEGUN RUT#####
+        // INSERTAR RUT DEL PROFESOR A ELIMINAR
+        $rut = 'xx.xxx.xxx-x'; 
+        $delete = "DELETE FROM profesor WHERE RUT_Profesor = '$rut'";
+        if (mysql_query($delete, $conexion)) {
+        		echo "Profesor rut: $rut Eliminado";
+        } else {
+        		echo "Error: " . $delete . "<br>" . mysql_error($conexion);
+        }
+        #####################
