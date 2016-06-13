@@ -36,15 +36,14 @@ alumno: Create y Delete listos
 
 
 //////*** ANOTACIONES ************///
-        ####CODIGO PARA INSERTAR ANOTACIOn #####
+        ####CODIGO PARA INSERTAR ANOTACION #####
          // INSERTAR DATOS DE LA ANOTACION
-        $id = '1'; #x
         $tipo = 'TIPO';
         $descripcion = 'DESCRIPCION';
         $fecha = '1989-12-22'; #yyyy-dd-mm
         $rut = '18.113.004-2'; #xx.xxx.xxx-x
         
-        $insert = "INSERT INTO anotacion (id_Anotacion, Tipo, Descripcion, Fecha, RUT_Alumno) values ('$id', '$tipo' , '$descripcion', CAST('$fecha' AS DATE) , '$rut' )";
+        $insert = "INSERT INTO anotacion ( Tipo, Descripcion, Fecha, RUT_Alumno) values ('$tipo' , '$descripcion', CAST('$fecha' AS DATE) , '$rut' )";
         if (mysql_query($insert, $conexion)) {
             echo "Nueva Anotacion Ingresada";
         } else {
@@ -55,7 +54,7 @@ alumno: Create y Delete listos
        ####CODIGO PARA ELIMINAR ANOTACION SEGUN ID#####
         // INSERTAR ID DE LA ANOTACION A ELIMINAR
         $id = 'x'; #no se si esta bien esta wea
-        $delete = "DELETE FROM anotacion WHERE id_Anotacion = '$id'";
+        $delete = "DELETE FROM anotacion WHERE id_Anotacion = $id";
         if (mysql_query($delete, $conexion)) {
         		echo "Anotacion id: $id Eliminada";
         } else {
@@ -71,10 +70,10 @@ alumno: Create y Delete listos
         $apellidoPaterno = 'APELLIDO_PATERNO';
         $apellidoMaterno = 'APELLIDO_MATERNO';
         $fecha_nac = '1989-12-22'; #yyyy-dd-mm
-        $tel = '123456789'
+        $tel = 123456789
         $correo = 'correo@correo.cl'
         
-        $insert = "INSERT INTO apoderado (RUT_Apoderado, Nombre_Apoderado, ApellidoP_Apoderado, ApellidoM_Apoderado, FechaNac_Apoderado, Telefono_Apoderado, Correo_Apoderado) values ('$rut', '$nombre' , '$apellidoPaterno', '$apellidoMaterno' , CAST('$fecha_nac' AS DATE) , '$tel', '$correo')";
+        $insert = "INSERT INTO apoderado (RUT_Apoderado, Nombre_Apoderado, ApellidoP_Apoderado, ApellidoM_Apoderado, FechaNac_Apoderado, Telefono_Apoderado, Correo_Apoderado) values ('$rut', '$nombre' , '$apellidoPaterno', '$apellidoMaterno' , CAST('$fecha_nac' AS DATE) , $tel, '$correo')";
         if (mysql_query($insert, $conexion)) {
             echo "Nuevo Apoderado Ingresado";
         } else {
@@ -97,11 +96,10 @@ alumno: Create y Delete listos
 //////*** ASIGNATURA ************///
         ####CODIGO PARA INSERTAR ASIGNATURA #####
          // INSERTAR DATOS DEL ASIGNATURA
-        $id = '1'; #x
         $nombre = 'NOMBRE';
         $rut_prof = '14.332.445-2'; # yy.yyy.yyy-y rut de apoderado que debe existir en la BD
         
-        $insert = "INSERT INTO asignatura (id_Asignatura, Nombre_Asignatura, RUT_Profesor) values ('$id', '$nombre' , '$rut_prof')";
+        $insert = "INSERT INTO asignatura (Nombre_Asignatura, RUT_Profesor) values ('$nombre' , '$rut_prof')";
         if (mysql_query($insert, $conexion)) {
             echo "Nuevo Alumno Ingresado";
         } else {
@@ -112,7 +110,7 @@ alumno: Create y Delete listos
        ####CODIGO PARA ELIMINAR ASIGNATURA SEGUN ID#####
         // INSERTAR RUT DEL ASIGNATURA A ELIMINAR
         $id = 'x'; 
-        $delete = "DELETE FROM asignatura WHERE id_Asignatura = '$id'";
+        $delete = "DELETE FROM asignatura WHERE id_Asignatura = $id";
         if (mysql_query($delete, $conexion)) {
         		echo "Asignatura id: $id Eliminado";
         } else {
@@ -124,13 +122,12 @@ alumno: Create y Delete listos
 //////*** CURSOS ************///
         ####CODIGO PARA INSERTAR CURSO #####
          // INSERTAR DATOS DEL CURSO
-        $id = '1'; #x
-        $nivel = 'NIVEL';
-        $letra = 'LETRA';
-        $cant_alum = 'CANT_ALUM';
+        $nivel = '2';
+        $letra = 'A';
+        $cant_alum = 40;
         $rut_prof = '14.332.445-2'; # yy.yyy.yyy-y rut de apoderado que debe existir en la BD
-
-        $insert = "INSERT INTO curso (id_Curso, Nivel, Letra, CantAlumnos, RUT_Profesor)" values ('$id', '$nivel' , '$letra', '$cant_alum', $rut_prof')";
+        #DUDA ACA CON LA LETRA, PERO CREO QUE ESTA BIEN ASÍ CON COMILLAS PORQUE ES VARCHAR
+        $insert = "INSERT INTO curso (Nivel, Letra, CantAlumnos, RUT_Profesor)" values ('$nivel', '$letra', $cant_alum, $rut_prof')";
         if (mysql_query($insert, $conexion)) {
             echo "Nuevo Curso Ingresado";
         } else {
@@ -140,8 +137,8 @@ alumno: Create y Delete listos
        
        ####CODIGO PARA ELIMINAR CURSO SEGUN ID#####
         // INSERTAR ID DE CURSO A ELIMINAR
-        $rut = 'x'; 
-        $delete = "DELETE FROM curso WHERE id_Curso = '$id'";
+        $id = 1; 
+        $delete = "DELETE FROM curso WHERE id_Curso = $id";
         if (mysql_query($delete, $conexion)) {
         		echo "Curso id: $id Eliminado";
         } else {
