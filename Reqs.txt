@@ -18,3 +18,13 @@ VISTAS:
   -VER ASISTENCIA POR ALUMNO
   -VER CURSO
   -**HACER CRUD PARA CADA TABLA**
+
+
+Requisitos post corrección 1:
+-que la secretaria onda tenga una funcion buscar cachay que le aparecen todos los ruts y weas onda que pueda poner en una barrita un rut y le aparescan todos los datos con respecto a ese rut no mas (lo mismo seria pal profesor)
+-falta agregar las cosas que te dije ayer en las notas el promedio de la asignatura y el promedio final en el fondo es generar el informe pal rut o alumno correspondente
+-hacer los distintos tipos de login 
+-en el login en vez que diga secretaria ponele administrador 
+-en la pestaña de notas la columna que dice IDNOTAS hay que hacer que no se muestre ocultarla no mas pero que siga existiendo
+-en notas donde aparece ID de asignatura, si se puediera en vez de mostrar el numero mostrar el nombre de la asignatura
+-adornar mas la wea con el bostrap y que por ejemplo se puedan editar las notas pa que el profe lo pueda ir registrando en la semana
